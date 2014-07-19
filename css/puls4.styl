@@ -3,6 +3,17 @@ gris_oscuro = #444
 gris_texto = #7A7A7A
 naranja = #DD4F24
 
+@font-face {
+	font-family: 'iconitos';
+	src:url('../fonts/icomoon.eot?-bgakk3');
+	src:url('../fonts/icomoon.eot?#iefix-bgakk3') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-bgakk3') format('woff'),
+		url('../fonts/icomoon.ttf?-bgakk3') format('truetype'),
+		url('../fonts/icomoon.svg?-bgakk3#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 a
 	color naranja
 
@@ -11,6 +22,26 @@ body
 	color gris_oscuro
 	font-family Arial
 	font-size 16px
+
+footer
+	background naranja
+	color rgba(white,0.5)
+	padding 1em 0
+	text-align center
+	width 100%
+
+	h3
+		font-size 14px
+		font-weight normal
+
+		strong
+			display block
+
+		.mejor
+			&:before
+			&:after
+				content " - "
+			
 
 header
 	background gris_oscuro
@@ -48,6 +79,12 @@ header
 			padding 0.2em 0.5em
 			text-decoration none
 			text-shadow 1px 1px 0px black
+
+			&:before
+				display inline-block
+				content:"\e600"
+				font-family "iconitos"
+				margin 0 3px 0 0
 			
 
 		.titulo
@@ -62,7 +99,7 @@ header
 		top 10px
 
 		.avatar
-			margin 0 1em 0 0
+			margin 0 1.1em 0 0
 			position relative
 			z-index 5
 
@@ -74,13 +111,21 @@ header
 			background naranja
 			color white
 			display block
-			padding 3px
+			padding 2px
 			position absolute
 			right 0
 			top 15px
 			text-align right
+			text-decoration none
 			width 50%
 			z-index 0
+
+			&:after
+				content:"\e602"
+				display inline-block
+				font-family "iconitos"
+				text-shadow 1px 1px 0px black
+				
 
 nav
 	background azul
@@ -122,9 +167,108 @@ nav
 		border-radius 0 0 0.5em 0.5em
 		box-shadow 2px 2px 10px rgba(0,0,0,0.2)
 		color gris_texto
+		margin-bottom 1em
 
 		.acciones
 			border-top 3px solid azul
+			padding 0.5em
+			overflow hidden
+
+			.datos
+				float right
+
+				.comentarios
+					background gris_oscuro
+					color white
+					margin 0 1em 0 0
+					padding 2px 5px
+					text-decoration none
+					border-radius 3px
+
+				.estrellita
+					text-decoration none
+
+					&:after
+						font-family "iconitos"
+						color #E0D561
+						content:"\e601"
+
+			.votos
+				float left
+
+				.down
+				.up
+					font-size 1.5em
+					text-decoration none
+
+				.down
+					color red
+					&:before
+						font-family "iconitos"
+						content:"\e602"
+
+				.up
+					color green
+					&:before
+						font-family "iconitos"
+						content:"\e603"
+
 
 		.descripcion
 			color gris_texto
+
+			.detalles
+				height 160px
+				margin-left 130px
+
+				.autor
+					margin 0.5em 0 2em 0
+
+				.tag
+					background azul
+					border-radius 0.5em
+					color white
+					padding 0.2em 0.5em
+					text-decoration none
+
+				.fecha
+					color gris_texto
+					float right
+					margin 0 1em 0 0
+					text-decoration none
+
+				.titulo
+					color gris_oscuro
+					font-size 18px
+					font-style italic
+					margin 0
+					padding 0.5em 0.5em 0 0
+
+			.imagen
+				float left
+
+				img
+					height 160px
+					vertical-align top
+					width 120px
+
+@media screen and (min-width: 768px)
+
+	header
+		.titular
+			.publicar
+				padding-left 3em
+				position relative
+
+				&:before
+					left 0px
+					font-size 2.5em
+					position absolute
+					top -10px
+	.posts
+		.post
+			display inline-block
+			width 48%
+			vertical-align top
+			&:nth-child(odd)
+				margin-right 2%
